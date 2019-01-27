@@ -1,4 +1,4 @@
-public class Darts {
+public class Darts<sout> {
 
     public  enum Multiplier {
         DOUBLE, TRIPLE, XX;
@@ -9,5 +9,7 @@ public class Darts {
     private boolean isFinished = false;
     private int turn = 1;//maxim 20 de turnuri
     private int lastTurnScore = score;//cum se reseteaza scorul curent
+
+   //Darts class in MASTER
 
 }

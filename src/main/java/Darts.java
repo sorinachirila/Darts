@@ -1,5 +1,5 @@
 public class Darts<sout> {
-
+    //branch DARTS_INITIAL
     public  enum Multiplier {
         DOUBLE, TRIPLE, XX;
     }
@@ -13,5 +13,25 @@ public class Darts<sout> {
    //Darts class in MASTER
     //
     // New Comment
+
+    public int score() {
+        return score;
+    }
+
+    public int dartsLeft() {
+        return dartsLeft;
+    }
+
+    public boolean isFinished() {
+        return isFinished;
+    }
+
+    public int turn() {
+        return turn;
+    }
+
+    public void darts(int throwScore) {
+        updateDartBoard(throwScore, null);
+    }
 
 }

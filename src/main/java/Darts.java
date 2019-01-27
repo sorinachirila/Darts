@@ -1,5 +1,9 @@
 public class Darts<sout> {
+ 
     //branch DARTS_INITIAL
+
+    // Branch Darts_FINAL
+
     public  enum Multiplier {
         DOUBLE, TRIPLE, XX;
     }
@@ -13,6 +17,7 @@ public class Darts<sout> {
    //Darts class in MASTER
     //
     // New Comment
+
 
     public int score() {
         return score;
@@ -33,5 +38,49 @@ public class Darts<sout> {
     public void darts(int throwScore) {
         updateDartBoard(throwScore, null);
     }
+
+
+    public void darts(int i, Multiplier m) {
+        int multiplier;
+        int scoreTemp;
+        switch (m) {
+            case DOUBLE:
+                multiplier = 2;
+                break;
+            case TRIPLE:
+                multiplier = 3;
+                break;
+            default:
+                multiplier = 1;
+                break;
+        }
+        scoreTemp = multiplier * i;
+        updateDartBoard(scoreTemp, m);
+    }
+
+    private void updateDartBoard(int scoreTemp, Multiplier m) {
+        if (dartsLeft == 1) {
+            turn++;
+            dartsLeft = 3;
+        } else {
+            dartsLeft--;
+        }
+        int throwScore = score - scoreTemp;
+        if (throwScore == 0 && m == Multiplier.DOUBLE) {
+            isFinished = true;
+            score = throwScore;
+            return;
+        }
+        if (throwScore <= 1) {
+            throwScore = lastTurnScore;
+
+        }
+        if (throwScore > 1 && dartsLeft == 3) {
+            lastTurnScore = throwScore;
+        }
+        score = throwScore;
+    }
+
+
 
 }

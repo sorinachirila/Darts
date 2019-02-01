@@ -6,7 +6,7 @@ import static org.junit.Assert.assertFalse;
 
 // Branch Darts_FINAL
 public class DartsTest {
-
+    //branch DARTS_INITIAL
     private Darts dartBoard;
 
     @Before
@@ -18,17 +18,23 @@ public class DartsTest {
     //New Comment
 
 
+
     //branch darts_final
+
+    //branch DARTS_INITIAL
+
     @Test
     public void testANewGameStart301(){
         assertEquals(301, dartBoard.score());
         assertFalse(dartBoard.isFinished());
     }
 
+
     @Test
     public void testANewGameHasCorrectNumberOfDartsAndTurn(){
         assertEquals(3, dartBoard.dartsLeft());
         assertEquals(1, dartBoard.turn());
     }
+
 
 }
